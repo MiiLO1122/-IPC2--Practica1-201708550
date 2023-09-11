@@ -56,7 +56,7 @@ class lista_piezas:
         while actual != None:
             if actual.pieza.fila == fila and actual.pieza.columna == columna:
                 return actual.pieza.color
-        actual = actual.siguiente
+            actual = actual.siguiente
 
     def imprimir_tablero_en_consola(self):
         texto = ""
