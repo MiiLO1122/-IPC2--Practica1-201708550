@@ -8,11 +8,11 @@ def configuracion_tablero():
     print("-----------------------Coloréalo-----------------------")
     print("Por favor ingrese el ancho del tablero")
     print("-----------------------Guatematel-----------------------")
-    filas = input("Filas")
+    filas = input(">")
     print("-----------------------Coloréalo-----------------------")
     print("Por favor ingrese el alto del tablero")
     print("-----------------------Guatematel-----------------------")
-    columnas = input("Columnas")
+    columnas = input(">")
     print("-----------------------Coloréalo-----------------------")
     # Creo todas las piezas de mi tablero
     mi_tablero.inicializar_tablero(int(filas), int(columnas))

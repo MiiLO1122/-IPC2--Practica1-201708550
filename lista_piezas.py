@@ -23,7 +23,7 @@ class lista_piezas:
             actual.siguiente = nodo_pieza(pieza=pieza)
             self.contador_de_piezas += 1
 
-    def recorrer_e_imprimir_lista(self):
+    """def recorrer_e_imprimir_lista(self):
         print("")
         print("")
         actual = self.primero
@@ -34,7 +34,7 @@ class lista_piezas:
             actual = actual.siguiente
         print("**************************************************************")
         print("")
-        print("")
+        print("")"""
 
     def inicializar_tablero(self, filas, columnas):
         for i in range(1, filas+1):
