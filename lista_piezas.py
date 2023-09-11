@@ -28,14 +28,9 @@ class lista_piezas:
         print("")
         actual = self.primero
         print("**************************************************************")
-        texto = ""
         while actual != None:
-            for i in range(1, self.filas):
-                texto += actual.pieza.color
-            actual = actual.siguiente
-        actual = self.primero
-        while actual != None:
-            print(texto)
+            print("Fila:", actual.pieza.fila, "Columna:",
+                  actual.pieza.columna, "Color:", actual.pieza.color)
             actual = actual.siguiente
         print("**************************************************************")
         print("")
@@ -44,7 +39,7 @@ class lista_piezas:
     def inicializar_tablero(self, filas, columnas):
         for i in range(1, filas+1):
             for j in range(1, columnas+1):
-                self.insertar_dato(pieza(i, j, "White"))
+                self.insertar_dato(pieza(i, j, " "))
 
     def actualizar_pieza(self, fila, columna, color):
         actual = self.primero
@@ -61,18 +56,22 @@ class lista_piezas:
         while actual != None:
             if actual.pieza.fila == fila and actual.pieza.columna == columna:
                 return actual.pieza.color
-            actual = actual.siguiente
+        actual = actual.siguiente
 
     def imprimir_tablero_en_consola(self):
+        texto = ""
         for i in range(1, self.filas+1):
             for j in range(1, self.columnas+1):
-                print(self.devolver_color_de_pieza(i, j), end="\t")
+                texto += "| "+str(self.devolver_color_de_pieza(i, j))+" "
+            texto += "|"
+            print(texto)
+            texto = ""
             print("")
         print("")
 
     def graficar(self):
         f = open('aa.dot', 'w')
-        texto = "digraph G {\n node [shape=plaintext];\nlabel=\"Tablero facilito\";\nsome_node [\nlabel=<\n<table border=\"0\" cellborder=\"0\" cellspacing=\"0\" width=\"100%\" height=\"100%\">\n"
+        texto = "digraph G {\n node [shape=plaintext];\nlabel=\"Tablero\";\nsome_node [\nlabel=<\n<table border=\"0\" cellborder=\"0\" cellspacing=\"0\" width=\"100%\" height=\"100%\">\n"
         for i in range(1, self.filas + 1):
             texto += "<tr>\n"
             for j in range(1, self.columnas + 1):
