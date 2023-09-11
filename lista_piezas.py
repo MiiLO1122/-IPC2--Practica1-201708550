@@ -76,7 +76,7 @@ class lista_piezas:
             texto += "<tr>\n"
             for j in range(1, self.columnas + 1):
                 texto += "<td bgcolor=\""+self.devolver_color_de_pieza(
-                    i, j)+"\" width=\"1\" height=\"1\">"+str(i)+","+str(j)+"</td>\n"
+                    i, j)+"\" width=\"1\" height=\"1\">"+str(self.devolver_color_de_pieza(i, j))+"</td>\n"
             texto += "</tr>\n"
         texto += "</table>>\n];\n}"
         f.write(texto)
